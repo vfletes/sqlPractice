@@ -5,4 +5,4 @@ CREATE TABLE animals(
     age INTEGER);
 INSERT INTO animals (id, type, age)
 VALUES (1, 'dog', 3);
-SELECT * FROM animals;
+SELECT * FROM animals

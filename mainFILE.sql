@@ -11,7 +11,7 @@ VALUES (1, 'dog', 3);
 INSERT INTO animals (id, type, age) 
 VALUES (2, 'cat', 2);
 
-ALTER TABLE animals ADD COLUMN gender TEXT;
+ALTER TABLE animals add COLUMN gender TEXT;
 
 UPDATE animals SET gender = 'female' WHERE id = 1;
 

@@ -32,3 +32,5 @@ SELECT * FROM animals WHERE type BETWEEN 'a' AND 'e'; --type starting with a not
 
 --SELECT DISTINCT 'age' FROM animals; this means showing every id with age that
 --does not repeat and only showing the first use of a repeat
+
+--Calculations performed on multiple rows of a table are called aggregates.

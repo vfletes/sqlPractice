@@ -5,11 +5,11 @@ CREATE TABLE animals(
     type TEXT,
     age INTEGER);
 
-INSERT INTO animals (id, type, age)
-VALUES (1, 'dog', 3);
+INSERT INTO animals (id, type, age) VALUES (1, 'dog', 6);
 
-INSERT INTO animals (id, type, age) 
-VALUES (2, 'cat', 2);
+INSERT INTO animals (id, type, age) VALUES (2, 'cat', 9);
+
+INSERT INTO animals (id, type, age) VALUES (3, 'alpaca', 13);
 
 ALTER TABLE animals ADD COLUMN gender TEXT;
 
@@ -30,7 +30,25 @@ SELECT * FROM animals WHERE type LIKE '%s'; -- any amount of letters before 's'
 SELECT * FROM animals WHERE type BETWEEN 'a' AND 'e'; --type starting with a not including e
 
 
---SELECT DISTINCT 'age' FROM animals; this means showing every id with age that
+SELECT DISTINCT 'age' FROM animals; --this means showing every id with age that
 --does not repeat and only showing the first use of a repeat
+
+SELECT age AS 'numberino' FROM animals; -- renames the column;
+
+SELECT id, age FROM animals ORDER BY age DESC; -- high to low listing or Z - A
+
+SELECT * FROM animals ORDER BY age DESC LIMIT 3; -- only shows 3, Limits aren't always supported
+--by all SQL databases
+
+SELECT type
+    CASE
+        WHEN age > 0 and age < 4 THEN 'Youngin'
+        WHEN age > 3 and age < 8 THEN 'Mid-Aged Woman'
+        ELSE 'Old bruh'
+    END AS 'done'
+FROM animals; -- this is an if else thingy
+
+
+        
 
 --Calculations performed on multiple rows of a table are called aggregates.

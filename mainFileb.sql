@@ -40,15 +40,25 @@ SELECT id, age FROM animals ORDER BY age DESC; -- high to low listing or Z - A
 SELECT * FROM animals ORDER BY age DESC LIMIT 3; -- only shows 3, Limits aren't always supported
 --by all SQL databases
 
-SELECT type
+SELECT type,
     CASE
-        WHEN age > 0 and age < 4 THEN 'Youngin'
-        WHEN age > 3 and age < 8 THEN 'Mid-Aged Woman'
+        WHEN age > 0 and age < 4
+            THEN 'Youngin'
+        WHEN age > 3 and age < 8
+            THEN 'Mid-Aged Woman'
         ELSE 'Old bruh'
     END AS 'done'
 FROM animals; -- this is an if else thingy
+
+SELECT COUNT(*) FROM animals WHERE age > 5; --counting all of the animals that are older than 5
+SELECT ROUND(AVG(age), 2) FROM animals; -- finds rounded average of animals to two decimal places
 
 
         
 
 --Calculations performed on multiple rows of a table are called aggregates.
+-- COUNT(): count the number of rows
+--SUM(): the sum of the values in a column
+--MAX()/MIN(): the largest/smallest value
+--AVG(): the average of the values in a column
+--ROUND(): round the values in the column

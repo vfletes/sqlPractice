@@ -1,4 +1,4 @@
---this is my SQL cheat sheet
+-- this is my SQL cheat sheet
 
 CREATE TABLE animals(
     id INTEGER,
@@ -27,10 +27,10 @@ SELECT * FROM animals WHERE type LIKE 'C__s' and age > 1;
 
 SELECT * FROM animals WHERE type LIKE '%s'; -- any amount of letters before 's'
 
-SELECT * FROM animals WHERE type BETWEEN 'a' AND 'e'; --type starting with a not including e
+SELECT * FROM animals WHERE type BETWEEN 'a' AND 'e'; -- type starting with a not including e
 
 
-SELECT DISTINCT 'age' FROM animals; --this means showing every id with age that
+SELECT DISTINCT 'age' FROM animals; -- this means showing every id with age that
 --does not repeat and only showing the first use of a repeat
 
 SELECT age AS 'numberino' FROM animals; -- renames the column;
@@ -50,15 +50,23 @@ SELECT type,
     END AS 'done'
 FROM animals; -- this is an if else thingy
 
-SELECT COUNT(*) FROM animals WHERE age > 5; --counting all of the animals that are older than 5
+SELECT COUNT(*) FROM animals WHERE age > 5; -- counting all of the animals that are older than 5
 SELECT ROUND(AVG(age), 2) FROM animals; -- finds rounded average of animals to two decimal places
 
+SELECT age, COUNT(*)
+FROM animals
+GROUP BY age; -- this is getting the mean of the ages in animals
 
-        
+SELECT type, SUM(age)
+FROM animals
+GROUP BY type; -- finds sum of ages in each type (dog, cat, alpaca)        
+-- could select multiple categories then type GROUP BY 1, 2 to order in that order
 
---Calculations performed on multiple rows of a table are called aggregates.
+
+
+-- Calculations performed on multiple rows of a table are called aggregates.
 -- COUNT(): count the number of rows
---SUM(): the sum of the values in a column
---MAX()/MIN(): the largest/smallest value
---AVG(): the average of the values in a column
---ROUND(): round the values in the column
+-- SUM(): the sum of the values in a column
+-- MAX()/MIN(): the largest/smallest value
+-- AVG(): the average of the values in a column
+-- ROUND(): round the values in the column

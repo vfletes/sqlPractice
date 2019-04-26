@@ -59,9 +59,12 @@ GROUP BY age; -- this is getting the mean of the ages in animals
 
 SELECT type, SUM(age)
 FROM animals
-GROUP BY type; -- finds sum of ages in each type (dog, cat, alpaca)        
+GROUP BY type
+HAVING SUM(age) > 3; -- finds sum of ages in each type (dog, cat, alpaca)        
 -- could select multiple categories then type GROUP BY 1, 2 to order in that order
-
+-- having allows the editor to only show the sum of each type of animal with at the sum 
+-- being more than 3
+ 
 
 
 -- Calculations performed on multiple rows of a table are called aggregates.

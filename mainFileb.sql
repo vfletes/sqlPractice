@@ -65,6 +65,18 @@ HAVING SUM(age) > 3; -- finds sum of ages in each type (dog, cat, alpaca)
 -- having allows the editor to only show the sum of each type of animal with at the sum 
 -- being more than 3
  
+ -- this joins multiple tables
+-- SELECT *
+-- FROM orders
+-- JOIN subscriptions
+	-- ON orders.subscription_id = subscriptions.subscription_id;
+
+-- the beginning of ON before WHERE has to be and id they both possess, in the codecademy case description was not in both
+-- SELECT *
+-- FROM orders
+-- JOIN subscriptions
+	-- ON orders.subscription_id = subscriptions.subscription_id WHERE subscriptions.description = 'Fashion Magazine';
+
 
 
 -- Calculations performed on multiple rows of a table are called aggregates.
